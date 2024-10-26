@@ -49,4 +49,24 @@ public class LoginTest {
         WebElement clickSignIn = webDriver.findElement(bySignInXpath);
         clickSignIn.click();
     }
+
+    @Test
+    public void test4() {
+        WebDriver webDriver = new ChromeDriver();
+        webDriver.get("https://secure.login.gov/");
+        String passwordXpath = "/html/body/main/div/form/lg-password-toggle/lg-validated-field/div/input";
+        String textEmailXpath = "//*[@id=\"user_email\"]";
+        String signInXpath = "//*[@id=\"new_user\"]/lg-captcha-submit-button/lg-spinner-button/button";
+        By passwordBy = By.xpath(passwordXpath);
+        By byTextEmailXpath = By.xpath(textEmailXpath);
+        WebElement passwordWebElement = webDriver.findElement(passwordBy);
+        WebElement inputTextEmail = webDriver.findElement(byTextEmailXpath);
+        String textEmail = "testA@test.com";
+        String passwordText = "a1S@d3F$";
+        passwordWebElement.sendKeys(passwordText);
+        inputTextEmail.sendKeys(textEmail);
+        By bySignInXpath = By.xpath(signInXpath);
+        WebElement clickSignIn = webDriver.findElement(bySignInXpath);
+        clickSignIn.click();
+    }
 }
