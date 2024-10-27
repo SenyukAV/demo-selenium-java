@@ -6,8 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.util.concurrent.TimeUnit;
-
 public class LoginTest {
     @Test
     public void test1() {
@@ -17,7 +15,6 @@ public class LoginTest {
         By bySignInXpath = By.xpath(signInXpath);
         WebElement clickSignIn = webDriver.findElement(bySignInXpath);
         clickSignIn.click();
-
     }
 
     @Test
